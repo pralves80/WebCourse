@@ -37,7 +37,10 @@ namespace SalesWebMvcCourse
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
 		    services.AddDbContext<SalesWebMvcCourseContext>(options =>
-		            options.UseSqlServer(Configuration.GetConnectionString("SalesWebMvcCourseContext")));
+               //SQLSERVER options.UseSqlServer(Configuration.GetConnectionString("SalesWebMvcCourseContext"))
+                     options.UseMySql(Configuration.GetConnectionString("SalesWebMvcCourseContext"), builder =>
+                          builder.MigrationsAssembly("SalesWebMvcCourse"))
+					);
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
