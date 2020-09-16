@@ -12,13 +12,13 @@ namespace SalesWebMvcCourse.Models
 		public DateTime BirthDate { get; set; }
 		public double BaseSalary { get; set; }
 		public Department Department { get; set; }
-		public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
+		public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();  //ICollection de que<SellesRecord> com propriedade Seles e ja vai ser istanciada recebendo uma List do tipo SelesRecord
 
-		public Seller()
+		public Seller()  //Precisa ciar um construtor default (vazio) pq vai ser criado logo a baixo o construtor com argumento
 		{
 		}
 
-		public Seller(int id, string name, string email, DateTime birthDate, double baseSalary, Department department)
+		public Seller(int id, string name, string email, DateTime birthDate, double baseSalary, Department department)  // construtor com argumento, foi criado usando o atalho(ferramenta) que fica no canto esquedo da linha, mas só usar o que for propriedade o que for do tipo enum nao é para criar (por exemplo que é uma coleção)
 		{
 			Id = id;
 			Name = name;
